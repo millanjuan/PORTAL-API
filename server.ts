@@ -22,10 +22,7 @@ server.use(bodyParser.json({ limit: "50mb" }));
 server.use(cookieParser());
 server.use(morgan("dev"));
 server.use((req: Request, res: Response, next: NextFunction) => {
-  res.header(
-    "Access-Control-Allow-Origin",
-    "https://portal-client-ljz2.onrender.com"
-  );
+  res.header("Access-Control-Allow-Origin", "wecare-eosin.vercel.app");
   res.header("Access-Control-Allow-Credentials", "true");
   res.header(
     "Access-Control-Allow-Headers",
