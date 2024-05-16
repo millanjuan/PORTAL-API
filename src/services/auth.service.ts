@@ -65,7 +65,9 @@ class AuthService {
 
   async validateUser(email: string, password: string) {
     try {
-      const user = await User.findOne({ email });
+      const user = await User.findOne({
+        email: { $regex: new RegExp(`^${email}$`, "i") },
+      });
 
       if (!user || !bcryptjs.compareSync(password, user.password)) {
         throw new CustomError(authErrors.INVALID_CREDENTIALS, 401);
