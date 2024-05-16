@@ -24,7 +24,7 @@ server.use(morgan("dev"));
 server.use((req: Request, res: Response, next: NextFunction) => {
   res.header(
     "Access-Control-Allow-Origin",
-    "https://wecare-rh3jr3v7i-millanjuans-projects.vercel.app/"
+    "https://portal-client-ljz2.onrender.com"
   );
   res.header("Access-Control-Allow-Credentials", "true");
   res.header(
